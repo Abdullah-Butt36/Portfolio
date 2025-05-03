@@ -1,0 +1,161 @@
+/* Basic Navbar Styling */
+.navbar {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out logo and links */
+  align-items: center; /* Vertically align items */
+  /* Modern Dark Glassmorphism styles */
+  background-color: rgba(26, 32, 44, 0.8); /* Semi-transparent dark navy */
+  backdrop-filter: blur(15px); /* Increased blur effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  color: white; /* White text color */
+  padding: 1rem 2rem; /* Padding top/bottom and left/right */
+  position: sticky; /* Make the navbar sticky at the top */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+  font-family: 'Times New Roman' , 'Times', serif; /* Added a simple font family */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+ 
+}
+
+/* Apply overflow-x hidden to body to prevent horizontal scrollbar from off-screen menu */
+body {
+    overflow-x: hidden;
+    /* Optional: Set a default background for the body */
+    background-color: #1a202c; /* Dark navy background for the body */
+    color: #ffffff; /* Default text color for the body */
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Logo/Site Title Styling */
+.navbar-logo a {
+  color: white; /* Bright blue color for the logo */
+  text-decoration: none; /* Remove underline */
+  font-size: 2rem; /* Slightly larger font size for logo */
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;/* Bold font weight */
+  transition: color 0.3s ease;
+}
+
+.navbar-logo a:hover {
+    color: #00bcd4; /* Cyan color on hover */
+}
+
+
+/* Navigation Links Styling */
+.nav-links {
+  list-style: none; /* Remove default list bullets */
+  display: flex; /* Arrange links in a row */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+  margin-left: 2.5rem; /* Increased space between links */
+}
+
+.nav-links a {
+  color: #f0f0f0; /* Light gray color for links */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Standard font size */
+  transition: color 0.3s ease, transform 0.3s ease, border-bottom 0.3s ease; /* Smooth transitions for color, transform, and border */
+  padding-bottom: 0.5rem; /* Add some padding at the bottom for the line */
+  border-bottom: 2px solid transparent; /* Add a transparent border bottom by default */
+  font-weight: 500; /* Medium font weight */
+}
+
+.nav-links a:hover {
+  color: #00aaff; /* Bright blue color on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  border-bottom-color: #00aaff; /* Show the line below on hover */
+}
+
+/* Hamburger Menu Icon Styling (Hidden by default on large screens) */
+.hamburger-icon {
+  display: none; /* Hide the icon by default */
+  flex-direction: column; /* Stack the bars vertically */
+  justify-content: space-between; /* Distribute space between bars */
+  width: 30px; /* Slightly wider icon */
+  height: 21px; /* Adjust height based on bar height and margin */
+  cursor: pointer; /* Indicate it's clickable */
+  padding: 5px; /* Reduce padding */
+  box-sizing: content-box; /* Include padding in the element's total width and height */
+}
+
+.hamburger-icon .bar {
+  width: 100%; /* Bars take full width of the icon container */
+  height: 3px; /* Height of the bars */
+  background-color: white; /* Color of the bars */
+  transition: all 0.3s ease; /* Smooth transition for animations */
+}
+
+/* Hamburger Icon Animation when Open */
+.hamburger-icon.open .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg); /* Adjust transform for new bar spacing */
+}
+
+.hamburger-icon.open .bar:nth-child(2) {
+  opacity: 0; /* Hide the middle bar */
+}
+
+.hamburger-icon.open .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg); /* Adjust transform for new bar spacing */
+}
+
+/* Responsive Styles (Media Query) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .nav-links {
+    /* Position the mobile menu off-screen by default */
+    position: fixed; /* Use fixed positioning to cover the viewport */
+    top: 60px; /* Position below the navbar - adjust if your navbar height is different */
+    left: 0;
+    background-color: rgba(26, 32, 44, 0.95); /* More opaque dark navy for mobile menu */
+    backdrop-filter: blur(15px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(15px); /* Safari support */
+    flex-direction: column; /* Stack links vertically */
+    width: 100%; /* Full width */
+    max-height: calc(100vh - 60px); /* Limit height to remaining viewport, allowing for scrolling */
+    transform: translateX(-101%); /* Adjusted to ensure it's fully off-screen */
+    transition: transform 0.7s ease-in-out; /* Smooth sliding animation */
+    padding: 2rem 1rem; /* Increase vertical padding and add horizontal padding */
+    z-index: 999; /* Below the navbar */
+    overflow-y: auto; /* Add scroll if content exceeds max height */
+    box-sizing: border-box; /* Include padding in the element's total width */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .nav-links.active {
+    transform: translateX(0); /* Slide the menu into view */
+  }
+
+  .nav-links li {
+    margin: 1rem 0; /* Adjust vertical space between stacked links */
+    width: 100%; /* Make list items take full width */
+  }
+
+  .nav-links a {
+      padding: 0.5rem 0; /* Adjust padding for stacked links */
+      border-bottom: none; /* Remove the line below on mobile */
+      font-size: 1.1rem; /* Slightly increase font size for mobile links */
+      display: block; /* Make links block elements to fill horizontal space */
+      text-align: left; /* Align text to the left */
+  }
+  
+
+  .nav-links a:hover {
+      border-bottom: none; /* Ensure no line on mobile hover */
+      color: #3392c1; /* Keep hover color */
+      transform: none;
+      cursor: pointer; /* Remove transform on mobile hover */
+  }
+
+
+  .hamburger-icon {
+    display: flex; /* Show the hamburger icon on small screens */
+  }
+}

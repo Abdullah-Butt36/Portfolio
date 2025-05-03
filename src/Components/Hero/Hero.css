@@ -1,0 +1,177 @@
+/* Hero Section Container */
+.hero-section {
+  /* Set a minimum height to ensure it takes up a good portion of the viewport */
+  min-height: 80vh; /* Adjusted minimum height */
+  display: flex; /* Use flexbox for creating two columns */
+  justify-content: center; /* Center the flex container horizontally */
+  align-items: center; /* Vertically align items (content and image container) */
+  /* Background color matching the About Me section */
+  background-color: #212b38; /* Dark background color */
+  color: #f0f0f0; /* Light gray text color */
+  width: 100%; /* Ensure it takes full width */
+  padding: 4rem 2rem; /* Apply padding directly to the section for inner spacing */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  overflow: hidden; /* Prevent potential overflow issues */
+  gap: 4rem; /* Increased gap between flex items for more separation */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+
+/* Hero Content Container */
+.hero-content {
+  flex: 1 1 400px; /* Adjusted flex-basis */
+  max-width: 500px; /* Adjusted maximum width */
+  text-align: left; /* Align text to the left in the content block */
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Hero Image Container */
+.hero-image-container {
+  flex: 1 1 300px; /* Adjusted flex-basis */
+  max-width: 350px; /* Adjusted maximum width */
+  display: flex; /* Use flexbox to center the image inside this container */
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Hero Image */
+.hero-image {
+  display: block; /* Remove extra space below the image */
+  width: 100%; /* Set width to 100% of its container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Make the image circular */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+  object-fit: cover; /* Ensure the image covers the circular area without distortion */
+  aspect-ratio: 1 / 1; /* Ensure a 1:1 aspect ratio for a perfect circle */
+  border: 3px solid #00aaff; /* Add a bright blue border around the image */
+}
+
+
+/* Hero Title (Your Name) */
+.hero-title {
+  font-size: 3.8rem; /* Adjusted font size */
+  margin-bottom: 1rem; /* Space below the title */
+  color: #ffffff; /* White color for the title - kept for contrast */
+  line-height: 1.2; /* Improve readability */
+}
+
+/* Highlight color for the name */
+.hero-title .highlight {
+  color: #00aaff; /* Bright blue highlight color */
+}
+
+/* Hero Tagline/Subtitle */
+.hero-tagline {
+  font-size: 1.6rem; /* Adjusted font size */
+  margin-bottom: 2.5rem; /* Adjusted space below the tagline */
+  color: #cccccc; /* Lighter gray color for the tagline - kept for contrast */
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  display: inline-block; /* Make it an inline-block element */
+  /* Gradient background for the button */
+  background: linear-gradient(to right, #00aaff, #00bcd4); /* Blue to Cyan gradient */
+  color: white; /* Button text color */
+  padding: 1rem 2.5rem; /* Adjusted padding */
+  font-size: 1.2rem; /* Font size for the button text */
+  text-decoration: none; /* Remove underline */
+  border-radius: 50px; /* More rounded corners */
+  transition: all 0.3s ease; /* Smooth transitions */
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for the button */
+}
+
+.cta-button:hover {
+  transform: translateY(-3px); /* Slightly more pronounced lift effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  opacity: 0.9; /* Slight opacity change on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-section {
+        gap: 3rem; /* Adjust gap */
+        padding: 3rem 1.5rem; /* Adjusted horizontal padding */
+    }
+
+    .hero-content {
+        flex-basis: 350px; /* Adjust basis */
+    }
+
+    .hero-image-container {
+        flex-basis: 250px; /* Adjust basis */
+        max-width: 300px; /* Adjust max width */
+    }
+
+    .hero-title {
+        font-size: 3rem; /* Adjusted font size */
+    }
+
+    .hero-tagline {
+        font-size: 1.4rem; /* Adjusted font size */
+    }
+}
+
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack content and image vertically on smaller screens */
+    padding: 3rem 1rem; /* Consistent horizontal padding with Navbar on small screens */
+    min-height: auto; /* Allow height to adjust based on content */
+    gap: 2rem; /* Adjust gap when stacked */
+    width: 100%; /* Ensure full width */
+  }
+
+  .hero-content {
+    margin-right: 0; /* Remove right margin when stacked */
+    margin-bottom: 1.5rem; /* Add space below content when stacked */
+    max-width: 100%; /* Allow content to take full width */
+    text-align: center; /* Center text when stacked */
+    flex-basis: auto; /* Reset flex basis */
+  }
+
+  .hero-image-container {
+    max-width: 60%; /* Adjust max width for the image container */
+    margin-top: 1rem; /* Add space above the image */
+    flex-basis: auto; /* Reset flex basis */
+  }
+
+  .hero-image {
+      width: 100%; /* Ensure image takes full width of its container */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  .hero-title {
+    font-size: 2.5rem; /* Decrease font size for smaller screens */
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem; /* Decrease font size for smaller screens */
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem; /* Adjust button padding */
+    font-size: 1rem; /* Adjust button font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem; /* Further decrease font size for very small screens */
+  }
+
+  .hero-tagline {
+    font-size: 1rem; /* Further decrease font size */
+  }
+
+  .hero-image-container {
+     max-width: 70%; /* Adjust max width for very small screens */
+  }
+}

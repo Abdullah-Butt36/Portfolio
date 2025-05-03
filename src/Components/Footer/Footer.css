@@ -1,0 +1,85 @@
+/* Footer Container */
+.footer {
+  /* Updated background color to match the navbar's semi-transparent dark color */
+  background-color: rgba(26, 32, 44, 0.8);
+  color: white; /* White text color */
+  padding: 1.5rem 2rem; /* Adjusted padding for a sticky footer */
+  text-align: center; /* Center text content */
+  /* Added styles for sticky footer */
+  position: fixed; /* Make the footer fixed */
+  bottom: 0; /* Stick to the bottom of the viewport */
+  left: 0; /* Extend to the left edge */
+  right: 0; /* Extend to the right edge */
+  z-index: 999; /* Ensure it stays on top of other content (slightly lower than navbar) */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  
+
+}
+
+/* Container for centering content and controlling width */
+.footer .container {
+  max-width: 800px; /* Reduced the maximum width of the content */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 1rem; /* Add some internal padding to the container */
+}
+
+/* Social Links Container */
+.social-links {
+  margin-bottom: 1rem; /* Adjusted space below social links */
+}
+
+/* Individual Social Link Styling */
+.social-links a {
+  color: white; /* White color for icons */
+  font-size: 1.5rem; /* Adjusted size of the icons */
+  margin: 0 0.8rem; /* Adjusted space between icons */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+  display: inline-block; /* Ensure icons are treated as blocks for margin/padding */
+}
+
+.social-links a:hover {
+  color: #007bff; /* Change color on hover (example blue) */
+}
+
+/* Copyright Text Styling */
+.copyright {
+   /* Adjusted smaller font size for copyright */
+  margin: 0; /* Remove default margin */
+  font-family: 'Times New Roman', 'Times', serif;
+}
+
+/* Add padding to the bottom of the main content area to prevent content from being hidden by the fixed footer */
+body {
+    padding-bottom: 6rem; /* Add padding to the bottom of the body. Adjust this value based on your footer's height */
+    overflow-x: hidden; /* Keep overflow-x hidden from previous change */
+    /* Optional: Set a default background for the body */
+    background-color: #1a202c; /* Dark navy background for the body */
+    color: #ffffff;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+   .footer .container {
+      max-width: 100%; /* Allow full width on small screens */
+      padding: 0 0.5rem; /* Adjust internal padding */
+   }
+
+  .social-links a {
+    font-size: 1.3rem; /* Decrease icon size */
+    margin: 0 0.6rem; /* Adjust space between icons */
+  }
+
+  .copyright {
+    font-size: 0.7rem; /* Decrease copyright font size */
+  }
+
+  body {
+      padding-bottom: 5rem; /* Adjust body padding for smaller screens */
+  }
+}

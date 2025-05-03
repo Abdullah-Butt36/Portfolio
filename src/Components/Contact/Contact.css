@@ -1,0 +1,156 @@
+/* Contact Section Container */
+.contact-section {
+    padding: 4rem 2rem; /* Padding top/bottom and left/right */
+    background-color: #1a202c; /* Dark navy background */
+    color: #f0f0f0; /* Light gray text color */
+    font-family: 'Roboto', sans-serif; /* Example font family */
+  }
+  
+  /* Container for centering content (optional, can reuse a global container class) */
+  .contact-section .container {
+    max-width: 800px; /* Limit content width */
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Center content inside the container */
+  }
+  
+  /* Section Title Styling */
+  .contact-section .section-title {
+    text-align: center; /* Center the title */
+    font-size: 2.5rem; /* Large font size */
+    margin-bottom: 3rem; /* Space below the title */
+    color: #ffffff; /* White color for the title */
+    position: relative; /* Needed for the underline effect */
+  }
+  
+  /* Underline effect for the section title */
+  .contact-section .section-title::after {
+    content: ''; /* Required for pseudo-elements */
+    display: block; /* Make it a block element */
+    width: 60px; /* Width of the underline */
+    height: 4px; /* Height of the underline */
+    background-color: #00aaff; /* Bright blue color of the underline */
+    margin: 10px auto 0; /* Center the underline and add space below */
+    border-radius: 2px; /* Optional: Rounded corners for the underline */
+  }
+  
+  /* Container for contact information */
+  .contact-content {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 1.5rem; /* Space between items */
+    background-color: #2d3748; /* Slightly lighter dark background */
+    padding: 2.5rem; /* Padding inside the content box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  }
+  
+  /* Intro paragraph styling */
+  .contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 1rem; /* Space below the intro */
+    color: #cccccc; /* Lighter gray color */
+  }
+  
+  /* Styling for individual contact info items (like email) */
+  .contact-info-item {
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: center; /* Vertically align */
+    gap: 0.8rem; /* Space between icon and text */
+    font-size: 1.1rem;
+    color: #f0f0f0; /* Light gray color */
+  }
+  
+  .contact-info-item .contact-icon {
+      color: #00bcd4; /* Cyan color for icons */
+      font-size: 1.3rem;
+  }
+  
+  .contact-info-item .contact-link {
+      color: #f0f0f0; /* Light gray color for the link */
+      text-decoration: none; /* Remove underline */
+      transition: color 0.3s ease;
+  }
+  
+  .contact-info-item .contact-link:hover {
+      color: #00aaff; /* Bright blue on hover */
+  }
+  
+  
+  /* Social media links container */
+  .contact-social-links {
+    margin-top: 1rem; /* Space above social links */
+  }
+  
+  /* Individual social icon link styling */
+  .contact-social-links .social-icon-link {
+    color: #f0f0f0; /* Light gray color for icons */
+    font-size: 1.8rem; /* Size of the icons */
+    margin: 0 0.8rem; /* Space between icons */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .contact-social-links .social-icon-link:hover {
+    color: #00aaff; /* Bright blue on hover */
+  }
+  
+  /* Optional: Styling for the contact form (if uncommented) */
+  .contact-form {
+      margin-top: 3rem;
+      width: 100%; /* Form takes full width of its container */
+       text-align: left; /* Align form elements to the left */
+   }
+  
+  .contact-form h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #00bcd4; 
+   } 
+  
+   
+  
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .contact-section {
+      padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    }
+  
+    .contact-section .section-title {
+      font-size: 2rem; /* Decrease title font size */
+      margin-bottom: 2rem; /* Adjust space below title */
+    }
+  
+    .contact-content {
+        padding: 2rem; /* Adjust padding */
+        gap: 1rem; /* Adjust gap */
+    }
+  
+    .contact-intro {
+        font-size: 1rem;
+    }
+  
+    .contact-info-item {
+        font-size: 1rem;
+    }
+  
+    .contact-info-item .contact-icon {
+        font-size: 1.2rem;
+    }
+  
+    .contact-social-links .social-icon-link {
+        font-size: 1.5rem; /* Decrease icon size */
+        margin: 0 0.6rem; /* Adjust space between icons */
+    }
+  
+    
+    .contact-form h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+  
+    .contact-form .form-group {
+        margin-bottom: 1rem;
+    }
+ 
+  }

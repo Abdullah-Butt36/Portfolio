@@ -1,0 +1,6 @@
+dist 
+node_modules
+public
+package.json
+vite.config.js
+eslint.config.js

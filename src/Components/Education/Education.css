@@ -1,0 +1,125 @@
+/* Education Section Container */
+.education-section {
+  padding: 4rem 2rem; /* Padding top/bottom and left/right */
+  background-color: #212b38; /* Changed background color to match About Me */
+  color: #f0f0f0; /* Light gray text color (matches About Me) */
+  font-family: 'Roboto', sans-serif; /* Font family (matches About Me) */
+}
+
+/* Container for centering content (optional, can reuse a global container class) */
+.education-section .container {
+  max-width: 1000px; /* Limit content width */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Section Title Styling */
+.education-section .section-title {
+  text-align: center; /* Center the title */
+  font-size: 2.5rem; /* Large font size (matches About Me) */
+  margin-bottom: 3rem; /* Space below the title */
+  color: #ffffff; /* White color for the title (matches About Me) */
+  position: relative; /* Needed for the underline effect */
+}
+
+/* Underline effect for the section title */
+.education-section .section-title::after {
+  content: ''; /* Required for pseudo-elements */
+  display: block; /* Make it a block element */
+  width: 60px; /* Width of the underline */
+  height: 4px; /* Height of the underline */
+  background-color: #00aaff; /* Bright blue color of the underline (matches About Me) */
+  margin: 10px auto 0; /* Center the underline and add space below */
+  border-radius: 2px; /* Optional: Rounded corners for the underline */
+}
+
+/* List of Education Items */
+.education-list {
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid columns */
+  gap: 2rem; /* Space between grid items */
+}
+
+/* Individual Education Item Styling */
+.education-item {
+  background-color: #2d3748; /* Slightly lighter dark background for each item (matches About Me item background) */
+  padding: 2rem; /* Padding inside each item */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* More pronounced shadow (matches About Me item shadow) */
+  border-left: 5px solid #00aaff; /* Bright blue accent border on the left (matches About Me border) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.education-item:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* More pronounced shadow on hover (matches About Me hover shadow) */
+}
+
+/* Education Degree Styling */
+.education-item .education-degree {
+  font-size: 1.5rem; /* Font size for the degree (kept for hierarchy) */
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 0.5rem; /* Space below the degree */
+  color: #00bcd4; /* Cyan color for the degree (matches About Me heading color) */
+}
+
+/* Institution Styling */
+.education-item .education-institution {
+  font-size: 1.1rem; /* Font size for the institution (kept for hierarchy) */
+  margin-bottom: 0.5rem; /* Space below the institution */
+  color: #cccccc; /* Lighter gray color (matches About Me text color) */
+}
+
+/* Years Styling */
+.education-item .education-years {
+  font-size: 1rem; /* Font size for the years (kept for hierarchy) */
+  margin-bottom: 1rem; /* Space below the years */
+  color: #aaaaaa; /* Even lighter gray color */
+  font-style: italic; /* Italicize the years */
+}
+
+/* Education Details List Styling */
+.education-item .education-details {
+  list-style: disc; /* Use discs for list bullets */
+  margin-top: 1rem; /* Space above the list */
+  padding-left: 1.5rem; /* Indent the list */
+  color: #f0f0f0; /* Light gray color for details (matches About Me text color) */
+}
+
+.education-item .education-details li {
+  margin-bottom: 0.5rem; /* Space between list items */
+  line-height: 1.4; /* Improve readability */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .education-section {
+    padding: 3rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .education-section .section-title {
+    font-size: 2rem; /* Decrease title font size */
+    margin-bottom: 2rem; /* Adjust space below title */
+  }
+
+  .education-list {
+    grid-template-columns: 1fr; /* Stack items on very small screens */
+    gap: 1.5rem; /* Adjust gap */
+  }
+
+  .education-item {
+    padding: 1.5rem; /* Adjust padding inside items */
+  }
+
+  .education-item .education-degree {
+    font-size: 1.3rem; /* Decrease degree font size */
+  }
+
+  .education-item .education-institution {
+    font-size: 1rem; /* Decrease institution font size */
+  }
+
+  .education-item .education-years {
+    font-size: 0.9rem; /* Decrease years font size */
+  }
+}

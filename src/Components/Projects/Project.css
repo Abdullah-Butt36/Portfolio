@@ -1,0 +1,186 @@
+/* Projects Section Container */
+.projects-section {
+  padding: 4rem 2rem; /* Padding top/bottom and left/right */
+  background-color: #1a202c; /* Dark navy background */
+  color: #f0f0f0; /* Light gray text color */
+  font-family: 'Roboto', sans-serif; /* Example font family */
+}
+
+/* Container for centering content (optional, can reuse a global container class) */
+.projects-section .container {
+  max-width: 1000px; /* Limit content width */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Section Title Styling */
+.projects-section .section-title {
+  text-align: center; /* Center the title */
+  font-size: 2.5rem; /* Large font size */
+  margin-bottom: 3rem; /* Space below the title */
+  color: #ffffff; /* White color for the title */
+  position: relative; /* Needed for the underline effect */
+}
+
+/* Underline effect for the section title */
+.projects-section .section-title::after {
+  content: ''; /* Required for pseudo-elements */
+  display: block; /* Make it a block element */
+  width: 60px; /* Width of the underline */
+  height: 4px; /* Height of the underline */
+  background-color: #00aaff; /* Bright blue color of the underline */
+  margin: 10px auto 0; /* Center the underline and add space below */
+  border-radius: 2px; /* Optional: Rounded corners for the underline */
+}
+
+/* List of Projects Container (This wraps the individual project items) */
+.projects-list {
+  display: flex; /* Use flexbox to arrange project items vertically */
+  flex-direction: column; /* Stack project items */
+  gap: 4rem; /* Space between project items */
+}
+
+/* Individual Project Item Styling */
+.project-item {
+  display: flex; /* Use flexbox for image and details side-by-side */
+  align-items: center; /* Vertically align items */
+  gap: 3rem; /* Space between image and details */
+  background-color: #2d3748; /* Slightly lighter dark background for each item */
+  padding: 2rem; /* Padding inside each item */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+/* Reverse layout for alternating items */
+/* This class is manually added to every second project-item in the JSX */
+.project-item.reverse-layout {
+  flex-direction: row-reverse; /* Reverse the order of image and details */
+}
+
+
+/* Project Image Container */
+/* This container holds the single image for a project */
+.project-image-container {
+  flex: 1; /* Allow image container to grow and shrink */
+  max-width: 50%; /* Limit max width of the image container on larger screens */
+  display: flex; /* Use flexbox to center image */
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+}
+
+/* Project Image */
+/* This styles the single image within the container */
+.project-image {
+  display: block; /* Remove extra space below image */
+  max-width: 100%; /* Ensure image is responsive within its container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure image covers the area if needed */
+  border-radius: 4px; /* Optional: Rounded corners for the image */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow on image */
+}
+
+/* Project Details Container */
+/* This container holds the title, description, and links */
+.project-details {
+  flex: 1; /* Allow details container to grow and shrink */
+  max-width: 50%; /* Limit max width of the details container on larger screens */
+}
+
+/* Project Title */
+.project-details .project-title {
+  font-size: 1.8rem; /* Font size for project title */
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 1rem; /* Space below title */
+  color: #00bcd4; /* Cyan color for project title */
+}
+
+/* Project Description */
+.project-details .project-description {
+  font-size: 1rem; /* Font size for description */
+  margin-bottom: 1.5rem; /* Space below description */
+  color: #cccccc; /* Lighter gray color */
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Project Links Container */
+.project-links {
+  margin-top: 1rem; /* Space above links */
+}
+
+/* Individual Project Link Styling */
+.project-links .project-link {
+  display: inline-block; /* Make links inline-block */
+  margin-right: 1.5rem; /* Space between links */
+  color: #00aaff; /* Bright blue link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.project-links .project-link:hover {
+  color: #00bcd4; /* Cyan color on hover */
+}
+
+.project-links .project-link i {
+    margin-left: 0.5rem; /* Space between text and icon */
+    font-size: 1rem; /* Icon size */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .projects-section .section-title {
+    font-size: 2rem; /* Decrease title font size */
+    margin-bottom: 2rem; /* Adjust space below title */
+  }
+
+  .projects-list {
+    gap: 3rem; /* Adjust gap between project items */
+  }
+
+  /* Stack image and details vertically on smaller screens */
+  .project-item,
+  .project-item.reverse-layout { /* Apply to both normal and reversed items */
+    flex-direction: column; /* Stack vertically */
+    gap: 2rem; /* Adjust gap when stacked */
+    padding: 1.5rem; /* Adjust padding inside item */
+  }
+
+  /* Adjust styles for stacked layout */
+  .project-image-container, /* Target the image container */
+  .project-details {
+    max-width: 100%; /* Allow full width when stacked */
+    flex: none; /* Remove flex properties when stacked */
+  }
+
+  .project-details {
+      text-align: center; /* Center text when stacked */
+  }
+
+  /* Adjust image styling when stacked */
+  .project-image {
+      width: 80%; 
+      margin: 0 auto;
+      height: auto; 
+  }
+
+
+  .project-details .project-title {
+    font-size: 1.5rem; /* Decrease project title font size */
+  }
+
+  .project-details .project-description {
+    font-size: 0.95rem; /* Decrease description font size */
+  }
+
+  .project-links {
+      text-align: center; /* Center links when stacked */
+  }
+
+  .project-links .project-link {
+      margin: 0 0.8rem; /* Adjust space between links when stacked */
+  }
+}
