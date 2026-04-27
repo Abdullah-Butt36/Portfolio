@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,38 +12,39 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="/">Abdullah Butt</a>
+        <Link to="/">Abdullah Butt</Link>
       </div>
 
       <ul className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
-        <Link to='/' ></Link>
         <li>
-          <Link to="/about" onClick={toggleMobileMenu}>
+          <NavLink to="/" end onClick={toggleMobileMenu} className={({ isActive }) => (isActive ? "active-link" : "")}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" onClick={toggleMobileMenu} className={({ isActive }) => (isActive ? "active-link" : "")}>
             About
-          </Link>
+          </NavLink>
         </li>
-
         <li>
-          <Link to="/education" onClick={toggleMobileMenu}>
+          <NavLink to="/education" onClick={toggleMobileMenu} className={({ isActive }) => (isActive ? "active-link" : "")}>
             Education
-          </Link>
+          </NavLink>
         </li>
-
         <li>
-          <Link to="/skills" onClick={toggleMobileMenu}>
+          <NavLink to="/skills" onClick={toggleMobileMenu} className={({ isActive }) => (isActive ? "active-link" : "")}>
             Skills
-          </Link>
+          </NavLink>
         </li>
-
         <li>
-          <Link to="/projects" onClick={toggleMobileMenu}>
+          <NavLink to="/projects" onClick={toggleMobileMenu} className={({ isActive }) => (isActive ? "active-link" : "")}>
             Projects
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/contact" onClick={toggleMobileMenu}>
+          <NavLink to="/contact" onClick={toggleMobileMenu} className={({ isActive }) => (isActive ? "active-link" : "")}>
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
 

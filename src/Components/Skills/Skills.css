@@ -1,161 +1,202 @@
-/* Skills Section Container */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ===== SKILLS SECTION ===== */
 .skills-section {
-  padding: 4rem 2rem; /* Padding top/bottom and left/right */
-  background-color: #212b38; /* Changed background color to match About Me */
-  color: #f0f0f0; /* Light gray text color (matches About Me) */
-  font-family: 'Roboto', sans-serif; /* Font family (matches About Me) */
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0d1b2a 0%, #0a0f1e 100%);
+  color: #f0f0f0;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-/* Container for centering content (optional, can reuse a global container class) */
-.skills-section .container {
-  max-width: 1000px; /* Limit content width */
-  margin: 0 auto; /* Center the container */
+/* Background Blobs */
+.skills-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
 }
 
-/* Section Title Styling */
-.skills-section .section-title {
-  text-align: center; /* Center the title */
-  font-size: 2.5rem; /* Large font size (matches About Me) */
-  margin-bottom: 3rem; /* Space below the title */
-  color: #ffffff; /* White color for the title (matches About Me) */
-  position: relative; /* Needed for the underline effect */
+.skills-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
 }
 
-/* Underline effect for the section title */
-.skills-section .section-title::after {
-  content: ''; /* Required for pseudo-elements */
-  display: block; /* Make it a block element */
-  width: 60px; /* Width of the underline */
-  height: 4px; /* Height of the underline */
-  background-color: #00aaff; /* Bright blue color of the underline (matches About Me) */
-  margin: 10px auto 0; /* Center the underline and add space below */
-  border-radius: 2px; /* Optional: Rounded corners for the underline */
+.skills-blob-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #7c3aed, #3a7bd5);
+  top: -200px;
+  right: -100px;
 }
 
-/* Container for all skill categories */
-.skills-categories {
-  display: grid; /* Use grid to arrange categories */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns for categories */
-  gap: 3rem; /* Space between categories */
+.skills-blob-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00d2ff, #f43f5e);
+  bottom: -150px;
+  left: -150px;
 }
 
-/* Individual Skill Category Styling */
-.skill-category {
-  background-color: #2d3748; /* Slightly lighter dark background for each category (matches About Me item background) */
-  padding: 2rem; /* Padding inside each category */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* More pronounced shadow (matches About Me item shadow) */
+/* Container */
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* Category Title Styling */
-.skill-category .category-title {
-  font-size: 1.8rem; /* Font size for category titles (kept for hierarchy) */
-  margin-top: 0; /* Remove default top margin */
-  margin-bottom: 1.5rem; /* Space below the category title */
-  color: #00bcd4; /* Cyan color for category titles (matches About Me heading color) */
-  border-bottom: 2px solid #4a5568; /* Subtle separator below title */
-  padding-bottom: 0.5rem; /* Space between title and separator */
+/* ===== HEADER ===== */
+.skills-header {
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
-/* List of Skills within a category */
-.skills-list {
-  display: grid; /* Use grid to arrange skill items */
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive columns for skills */
-  gap: 1rem; /* Space between skill items */
+.skills-badge {
+  display: inline-block;
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  color: #00d2ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.35rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
 }
 
-
-/* Individual Skill Item Styling */
-.skill-item {
-  background-color: #4a5568; /* Even lighter dark background for each skill item (matches About Me text background) */
-  padding: 1rem; /* Padding inside each item */
-  border-radius: 5px; /* Slightly smaller rounded corners */
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Lighter shadow (matches About Me text shadow) */
-  text-align: center; /* Center text and icon */
-  display: flex; /* Use flexbox for icon and text alignment */
-  flex-direction: column; /* Stack icon and text vertically */
-  align-items: center; /* Center items horizontally in the column */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  cursor: pointer; /* Indicate it's interactive */
+.skills-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0.5rem 0;
+  letter-spacing: -0.5px;
 }
 
-.skill-item:hover {
-  transform: translateY(-5px); /* Slight lift effect on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover (matches About Me hover shadow) */
+.skills-highlight {
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Skill Icon Styling */
-.skill-item .skill-icon {
-  font-size: 2.5rem; /* Large size for icons (kept for visual impact) */
-  margin-bottom: 0.5rem; /* Space below the icon */
-  color: #00aaff; /* Bright blue icon color (matches About Me accent color) */
+.skills-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  margin: 1rem auto 0;
+  border-radius: 2px;
 }
 
-/* Specific icon colors (Optional - customize based on icon) */
-/* Keeping some specific tech colors for visual interest */
-.skill-item .fa-react { color: #61DAFB; }
-.skill-item .fa-js { color: #F7DF1E; }
-.skill-item .fa-html5 { color: #E34F26; }
-.skill-item .fa-css3-alt { color: #1572B6; }
-.skill-item .fa-node-js { color: #339933; }
-.skill-item .fa-mongodb { color: #47A248; }
-.skill-item .fa-git-alt { color: #F05032; }
-.skill-item .fa-github { color: #ffffff; } /* White GitHub icon on dark background */
-.skill-item .fa-npm { color: #CB3837; }
-.skill-item .fa-wordpress { color: #21759B; }
-/* Add more specific icon colors here */
-
-
-/* Skill Name Styling */
-.skill-item .skill-name {
-  font-size: 1rem; /* Font size for skill names (matches About Me text size) */
-  color: #f0f0f0; /* Light gray text color (matches About Me text color) */
-  font-weight: bold;
-  text-align: center; /* Ensure text is centered */
+/* ===== SKILLS GRID ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
+/* ===== CATEGORY CARD ===== */
+.skill-category-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
-/* Responsive Styles */
+.skill-category-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 210, 255, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-icon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #00d2ff22, #3a7bd522);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #00d2ff;
+}
+
+.category-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ===== SKILLS LIST ===== */
+.skills-items-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tag i {
+  font-size: 1rem;
+  color: #00d2ff;
+  transition: transform 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(0, 210, 255, 0.1);
+  border-color: rgba(0, 210, 255, 0.4);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.skill-tag:hover i {
+  transform: scale(1.2);
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .skills-section {
-    padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    padding: 4rem 1.5rem;
   }
 
-  .skills-section .section-title {
-    font-size: 2rem; /* Decrease title font size */
-    margin-bottom: 2rem; /* Adjust space below title */
+  .skills-title {
+    font-size: 2.5rem;
   }
 
-  .skills-categories {
-    grid-template-columns: 1fr; /* Stack categories on smaller screens */
-    gap: 2rem; /* Adjust gap between stacked categories */
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 
-  .skill-category {
-    padding: 1.5rem; /* Adjust padding inside categories */
-  }
-
-  .skill-category .category-title {
-    font-size: 1.5rem; /* Decrease category title font size */
-    margin-bottom: 1rem; /* Adjust space below category title */
-  }
-
-  .skills-list {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust skill item columns */
-    gap: 0.8rem; /* Adjust gap between skill items */
-  }
-
-  .skill-item {
-    padding: 0.8rem; /* Adjust padding inside skill items */
-  }
-
-
-  .skill-item .skill-icon {
-    font-size: 2rem; /* Decrease icon size */
-    margin-bottom: 0.3rem; /* Adjust space below icon */
-  }
-
-  .skill-item .skill-name {
-    font-size: 0.9rem; /* Decrease skill name font size */
+  .skill-category-card {
+    padding: 1.5rem;
   }
 }

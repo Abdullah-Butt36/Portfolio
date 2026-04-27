@@ -1,70 +1,123 @@
 import React from 'react';
-import './About.css';
-
+import './about.css';
+import { motion } from 'framer-motion';
+import { pageVariants } from '../../animations';
 
 function About() {
-  
-  const mainAboutContent = {
-      heading: "My Journey into Tech", 
-      paragraphs: [
-          "Hello! I'm Abdullah Butt, a passionate full-stack developer with a focus on the frontend development i:e: React Js ,  MERN stack and a keen interest in  WordPress.",
-          "My journey into technology began with Online Courses and i have also intrest in coding . Since then, I've been dedicated to building robust and user-friendly applications.",
-          "I thrive on learning new technologies and solving complex problems. I enjoy  creating responsive user interfaces with React Js , designing efficient backend APIs, exploring new libraries and as well wordpress."
-      ]
-  };
-
-  const sectionTwoContent = {
-      heading: "Focusing on [Specific Area, e.g., Frontend Development]",
-      paragraphs: [
-       "A front-end developer specializing in crafting dynamic and responsive user interfaces with React, I also build robust server-side applications using Node.js. My focus is on creating seamless, full-stack web experiences."
-      ]
-  };
-
-  const sectionThreeContent = {
-      heading: "My Passion and Future Direction",
-      paragraphs: [
-       "My current role involves teaching web development lectures at the university level, where I guide around 10 students through the fundamentals of bringing websites to life. This experience in explaining technical concepts not only benefits my students but also significantly fuels my own deep passion for coding.",
-       "Outside of the classroom, coding isn't just a profession; it's my main hobby and where I genuinely love spending my time. I get immense satisfaction from the process of turning creative ideas into functional reality through code, constantly learning and exploring new technologies along the way. Looking forward, my clear goal is to channel this passion and my practical teaching experience into a dedicated career as a software developer, contributing to exciting projects and continuing to build my technical expertise."
-      ]
-  };
-
+  const skills = [
+    { icon: "fas fa-code", label: "React.js" },
+    { icon: "fas fa-server", label: "Node.js" },
+    { icon: "fab fa-js-square", label: "JavaScript" },
+    { icon: "fas fa-database", label: "MongoDB" },
+    { icon: "fas fa-fire", label: "Express.js" },
+    { icon: "fab fa-git-alt", label: "Git & GitHub" },
+    { icon: "fas fa-bolt", label: "Supabase" },
+  ];
 
   return (
     <section className="about-section">
-      <div className="container">
-       
-        <h2 className="section-title">About Me</h2>
+      <div className="about-bg">
+        <div className="about-blob about-blob-1"></div>
+        <div className="about-blob about-blob-2"></div>
+      </div>
 
-       
-    
-        <div className="additional-about-section"> 
-             <h3 className="additional-section-heading">{mainAboutContent.heading}</h3>
-             <div className="additional-section-text">
-                 {mainAboutContent.paragraphs.map((paragraph, index) => (
-                     <p key={index}>{paragraph}</p>
-                 ))}
-             </div>
-         </div>
-        <div className="additional-about-section"> 
-             <h3 className="additional-section-heading">{sectionTwoContent.heading}</h3>
-             <div className="additional-section-text">
-                 {sectionTwoContent.paragraphs.map((paragraph, index) => (
-                     <p key={index}>{paragraph}</p>
-                 ))}
-             </div>
-         </div>
+      <motion.div 
+        variants={pageVariants} 
+        initial="initial" 
+        animate="animate"
+      >
 
-   
-        <div className="additional-about-section">
-             <h3 className="additional-section-heading">{sectionThreeContent.heading}</h3>
-             <div className="additional-section-text"> 
-                 {sectionThreeContent.paragraphs.map((paragraph, index) => (
-                     <p key={index}>{paragraph}</p>
-                 ))}
-             </div>
-         </div>
+      <div className="about-container">
+
+        {/* Header */}
+        <div className="about-header">
+          <span className="about-badge">Get To Know Me</span>
+          <h2 className="about-title">About <span className="about-highlight">Me</span></h2>
+          <div className="about-divider"></div>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="about-grid">
+
+          {/* Left — Personal Info */}
+          <div className="about-card about-personal">
+            <div className="card-icon-wrap">
+              <i className="fas fa-user-circle"></i>
+            </div>
+            <h3>My Journey</h3>
+            <p>
+              I'm <strong>Abdullah Butt</strong>, a passionate Full-Stack Developer
+              focused on building clean, performant, and scalable web applications.
+            </p>
+            <p>
+              My journey started with self-learning through online courses, which quickly
+              grew into a deep love for coding. I specialize in the <strong>MERN stack</strong> and
+              enjoy turning complex problems into elegant solutions.
+            </p>
+            <p>
+              I currently teach web development at the university level, guiding students
+              through the fundamentals of modern web technologies — an experience that
+              deepens my own understanding and keeps my passion alive.
+            </p>
+          </div>
+
+          {/* Right — Stats + Skills */}
+          <div className="about-right">
+
+            {/* Stats */}
+            <div className="about-stats-grid">
+              <div className="about-stat-card">
+                <span className="stat-num">1+</span>
+                <span className="stat-desc">Year of Experience</span>
+              </div>
+              <div className="about-stat-card">
+                <span className="stat-num">10+</span>
+                <span className="stat-desc">Projects Completed</span>
+              </div>
+              <div className="about-stat-card">
+                <span className="stat-num">10+</span>
+                <span className="stat-desc">Students Mentored</span>
+              </div>
+              <div className="about-stat-card">
+                <span className="stat-num">5+</span>
+                <span className="stat-desc">Technologies Mastered</span>
+              </div>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="about-card about-tech">
+              <h3>Tech I Work With</h3>
+              <div className="tech-grid">
+                {skills.map((skill, index) => (
+                  <div className="tech-chip" key={index}>
+                    <i className={skill.icon}></i>
+                    <span>{skill.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Passion Block */}
+        <div className="about-passion">
+          <div className="passion-icon">
+            <i className="fas fa-heart"></i>
+          </div>
+          <div className="passion-content">
+            <h3>What Drives Me</h3>
+            <p>
+              Coding isn't just my profession — it's my hobby. I get immense satisfaction from
+              turning ideas into functional, beautiful reality through code. My goal is to build
+              meaningful digital experiences and grow as a dedicated Full-Stack Developer, contributing
+              to exciting projects while constantly expanding my technical expertise.
+            </p>
+          </div>
+        </div>
 
       </div>
+      </motion.div>
     </section>
   );
 }

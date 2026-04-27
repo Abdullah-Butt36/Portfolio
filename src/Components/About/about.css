@@ -1,192 +1,311 @@
-/* About Me Section Container */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ===== ABOUT SECTION ===== */
 .about-section {
-  padding: 6rem 2rem; /* Increased top/bottom padding for more vertical space */
-  background-color: #212b38; /* Slightly different dark background color */
-  color: #f0f0f0; /* Light gray text color */
-  font-family: 'Roboto', sans-serif; /* Example font family */
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #0d1b2a 0%, #0a0f1e 100%);
+  color: #f0f0f0;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Container for centering content (optional, can reuse a global container class) */
-.about-section .container {
-  max-width: 900px; /* Adjusted max-width for the content */
-  margin: 0 auto; /* Center the container */
+/* Background Blobs */
+.about-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
 }
 
-/* Section Title Styling (Main "About Me" title) */
-.about-section .section-title {
-  text-align: center; /* Center the title */
-  font-size: 2.5rem; /* Large font size */
-  margin-bottom: 3rem; /* Space below the title */
-  color: #ffffff; /* White color for the title */
-  position: relative; /* Needed for the underline effect */
+.about-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
 }
 
-/* Underline effect for the section title */
-.about-section .section-title::after {
-  content: ''; /* Required for pseudo-elements */
-  display: block; /* Make it a block element */
-  width: 60px; /* Width of the underline */
-  height: 4px; /* Height of the underline */
-  background-color: #00aaff; /* Bright blue color of the underline */
-  margin: 10px auto 0; /* Center the underline and add space below */
-  border-radius: 2px; /* Optional: Rounded corners for the underline */
+.about-blob-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #3a7bd5, #00d2ff);
+  top: -100px;
+  right: -150px;
 }
 
-/* Container for the first about content section (can include image and text) */
-.about-content {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack content by default on small screens */
-  align-items: center; /* Center items horizontally when stacked */
-  gap: 2rem; /* Space between image and text */
-  margin-bottom: 3rem; /* Space below the main about content */
+.about-blob-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #7c3aed, #3a7bd5);
+  bottom: -100px;
+  left: -100px;
 }
 
-/* Optional: Styling for the About image container */
-/* Uncomment if you add an image in About.js */
-/*
-.about-image {
-  flex-shrink: 0; /* Prevent image from shrinking */
-  /* max-width: 250px; /* Limit image width */
-  /* border-radius: 50%; /* Make the image round */
-  /* overflow: hidden; /* Hide anything outside the border-radius */
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow */
-  /* border: 3px solid #00aaff; /* Add a bright blue border */
-/* } */
-
-/* Optional: Styling for the About image */
-/* Uncomment if you add an image in About.js */
-/*
-.about-image img {
-  display: block; /* Remove extra space below image */
-  /* width: 100%; /* Ensure image fills its container */
-  /* height: auto; /* Maintain aspect ratio */
-  /* object-fit: cover; /* Ensure image covers the area */
-  /* aspect-ratio: 1 / 1; /* Ensure 1:1 aspect ratio for roundness */
-/* } */
-
-
-/* Styling for the main About text content */
-.about-text {
-  flex-grow: 1; /* Allow text to take up available space */
-  line-height: 1.6; /* Improve readability */
-  font-size: 1.1rem; /* Font size for the text */
-  color: #cccccc; /* Lighter gray color for text */
-  text-align: center; /* Center text by default on small screens */
+/* Container */
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-.about-text p {
-    margin-bottom: 1rem; /* Space between paragraphs */
+/* ===== HEADER ===== */
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
-.about-text p:last-child {
-    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+.about-badge {
+  display: inline-block;
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  color: #00d2ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.35rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
 }
 
-/* Styling for the heading within the first about content section (if used) */
-.about-content .about-section-heading {
-    font-size: 2rem; /* Font size for the heading */
-    margin-bottom: 1.5rem; /* Space below the heading */
-    color: #00bcd4; /* Cyan color for the heading */
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0.5rem 0;
+  letter-spacing: -0.5px;
 }
 
-
-/* Styling for the additional section wrappers (Second and Third Sections) */
-.additional-about-section {
-    margin-top: 3rem; /* Space above each additional section */
-    padding-top: 3rem; /* Padding above the content within the section */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator line */
-    text-align: center; /* Center content by default */
+.about-highlight {
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Styling for the heading within additional sections */
-.additional-about-section .additional-section-heading {
-    font-size: 2rem; /* Font size for the heading */
-    margin-bottom: 1.5rem; /* Space below the heading */
-    color: #00bcd4; /* Cyan color for the heading */
+.about-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  margin: 1rem auto 0;
+  border-radius: 2px;
 }
 
-/* Styling for the text wrapper within additional sections */
-.additional-about-section .additional-section-text {
-    line-height: 1.6; /* Improve readability */
-    font-size: 1.1rem; /* Font size for the text */
-    color: #cccccc; /* Lighter gray color for text */
+/* ===== MAIN GRID ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: start;
 }
 
-.additional-about-section .additional-section-text p {
-     margin-bottom: 1rem; /* Space between paragraphs */
+/* ===== CARDS ===== */
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.additional-about-section .additional-section-text p:last-child {
-    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+.about-card:hover {
+  border-color: rgba(0, 210, 255, 0.2);
+  transform: translateY(-4px);
 }
 
-
-/* Responsive Styles */
-@media (min-width: 769px) { /* Apply side-by-side layout on larger screens */
-    .about-content {
-        flex-direction: row; /* Arrange image and text side-by-side */
-        text-align: left; /* Align text to the left */
-    }
-
-    .about-image {
-        margin-right: 2rem; /* Add space between image and text */
-    }
-
-    .about-text {
-        text-align: left; /* Align text to the left */
-    }
-
-    /* Align text to the left for headings and text in additional sections on larger screens */
-    .about-content .about-section-heading,
-    .additional-about-section,
-    .additional-about-section .additional-section-heading,
-    .additional-about-section .additional-section-text {
-        text-align: left;
-    }
+.card-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00d2ff22, #3a7bd522);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  color: #00d2ff;
 }
 
+.about-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
 
-@media (max-width: 768px) {
+.about-card p {
+  color: #94a3b8;
+  line-height: 1.8;
+  font-size: 0.97rem;
+  margin-bottom: 0.8rem;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+.about-card strong {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+/* ===== RIGHT COLUMN ===== */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ===== STATS GRID ===== */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.about-stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-stat-card:hover {
+  border-color: rgba(0, 210, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.stat-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+}
+
+/* ===== TECH CHIPS ===== */
+.about-tech h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.2rem 0;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 210, 255, 0.06);
+  border: 1px solid rgba(0, 210, 255, 0.15);
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.tech-chip i {
+  color: #00d2ff;
+  font-size: 0.9rem;
+}
+
+.tech-chip:hover {
+  background: rgba(0, 210, 255, 0.12);
+  border-color: rgba(0, 210, 255, 0.35);
+  color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* ===== PASSION BLOCK ===== */
+.about-passion {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.about-passion:hover {
+  border-color: rgba(244, 63, 94, 0.25);
+}
+
+.passion-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #f43f5e;
+}
+
+.passion-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.7rem 0;
+}
+
+.passion-content p {
+  color: #94a3b8;
+  line-height: 1.8;
+  font-size: 0.97rem;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
   .about-section {
-    padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    padding: 4rem 1.5rem;
   }
 
-  .about-section .section-title {
-    font-size: 2rem; /* Decrease title font size */
-    margin-bottom: 2rem; /* Adjust space below title */
+  .about-title {
+    font-size: 2.2rem;
   }
 
-  .about-content {
-    gap: 2rem; /* Adjust gap when stacked */
-    margin-bottom: 2rem; /* Adjust space below main content when stacked */
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  /* Adjust image styling when stacked */
-  .about-image {
-    max-width: 50%; /* Adjust max width for image when stacked */
-    margin: 0 auto; /* Center image when stacked */
+  .about-passion {
+    flex-direction: column;
   }
-
-  .about-text {
-    font-size: 1rem; /* Decrease text font size */
-    text-align: center; /* Ensure text is centered when stacked */
-  }
-
-  /* Adjust styles for additional sections when stacked */
-  .additional-about-section {
-      margin-top: 2rem; /* Adjust space above additional section */
-      padding-top: 2rem; /* Adjust padding */
-      text-align: center; /* Ensure additional section text is centered */
-  }
-
-   .about-content .about-section-heading,
-   .additional-about-section .additional-section-heading {
-       font-size: 1.8rem; /* Decrease heading font size */
-       margin-bottom: 1rem; /* Adjust space below heading */
-   }
-
-   .about-text,
-   .additional-about-section .additional-section-text {
-       font-size: 1rem; /* Decrease text font size */
-   }
 }

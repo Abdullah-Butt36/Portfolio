@@ -1,6 +1,7 @@
 import React from 'react';
-import './Education.css'; 
-
+import './Education.css';
+import { motion } from 'framer-motion';
+import { pageVariants } from '../../animations';
 
 function Education() {
 
@@ -8,51 +9,85 @@ function Education() {
     {
       degree: 'Bachelor of Science in Computer Science',
       institution: 'University of Gujrat, Gujrat',
-      years: 'Expected Graduation : 2027',
+      years: '2023 - 2027 (Expected)',
+      icon: 'fas fa-university',
       details: [
-        'Relevant Coursework: Data Structures, Algorithms, Database Systems, Software Engeenring , Web Development.'
+        'Specializing in Modern Web Technologies and Software Architecture.',
+        'Core Subjects: Data Structures, Algorithms, Database Systems, Software Engineering.',
+        'Maintaining strong academic performance with a focus on practical coding.'
       ]
     },
     {
-      degree: 'Ics - Physics',
-      institution: 'punjab College , wazirbad',
-      years: '2021 - 2023',
-      details: [
-        'Focus on Computer and Mathematics'
-      ]
-    },
-    {
-      degree: 'Full Stack Web Developer',
-      institution: 'Online Hub',
+      degree: 'Full Stack Web Developer Certification',
+      institution: 'Online Learning Hub',
       years: '2023 - 2024',
+      icon: 'fas fa-code',
       details: [
-       " My technical stack includes web development with HTML, CSS, JavaScript, and backend integrations, as well as practical security tools for network defense and vulnerability analysis"
+        'Comprehensive training in MERN Stack (MongoDB, Express, React, Node.js).',
+        'Built multiple responsive frontend and full-stack projects.',
+        'Learned advanced JavaScript (ES6+), RESTful APIs, and Git version control.'
+      ]
+    },
+    {
+      degree: 'Intermediate in Computer Science (ICS)',
+      institution: 'Punjab College, Wazirabad',
+      years: '2021 - 2023',
+      icon: 'fas fa-graduation-cap',
+      details: [
+        'Focused on Computer Science, Mathematics, and Physics.',
+        'Developed foundational logic and problem-solving skills.',
+        'Introduction to C Language and procedural programming.'
       ]
     }
   ];
 
   return (
     <section className="education-section">
-      <div className="container">
-        <h2 className="section-title">Education</h2>
+      <div className="edu-bg">
+        <div className="edu-blob edu-blob-1"></div>
+        <div className="edu-blob edu-blob-2"></div>
+      </div>
 
-        <div className="education-list">
+      <motion.div 
+        variants={pageVariants} 
+        initial="initial" 
+        animate="animate"
+        className="edu-container"
+      >
+        <div className="edu-header">
+          <span className="edu-badge">Academic Background</span>
+          <h2 className="edu-title">My <span className="edu-highlight">Education</span></h2>
+          <div className="edu-divider"></div>
+        </div>
+
+        <div className="timeline">
           {educationEntries.map((entry, index) => (
-            <div className="education-item" key={index}>
-              <h3 className="education-degree">{entry.degree}</h3>
-              <p className="education-institution">{entry.institution}</p>
-              <p className="education-years">{entry.years}</p>
-              {entry.details && entry.details.length > 0 && (
-                <ul className="education-details">
-                  {entry.details.map((detail, detailIndex) => (
-                    <li key={detailIndex}>{detail}</li>
-                  ))}
-                </ul>
-              )}
+            <div className="timeline-item" key={index}>
+              <div className="timeline-dot">
+                <i className={entry.icon}></i>
+              </div>
+              
+              <div className="timeline-content">
+                <div className="edu-card">
+                  <div className="edu-card-header">
+                    <span className="edu-duration">{entry.years}</span>
+                    <h3 className="edu-degree">{entry.degree}</h3>
+                    <p className="edu-inst">{entry.institution}</p>
+                  </div>
+                  
+                  <div className="edu-card-body">
+                    <ul className="edu-details">
+                      {entry.details.map((detail, dIndex) => (
+                        <li key={dIndex}>{detail}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

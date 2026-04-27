@@ -1,186 +1,281 @@
-/* Projects Section Container */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ===== PROJECTS SECTION ===== */
 .projects-section {
-  padding: 4rem 2rem; /* Padding top/bottom and left/right */
-  background-color: #1a202c; /* Dark navy background */
-  color: #f0f0f0; /* Light gray text color */
-  font-family: 'Roboto', sans-serif; /* Example font family */
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #0d1b2a 0%, #0a0f1e 100%);
+  color: #f0f0f0;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-/* Container for centering content (optional, can reuse a global container class) */
-.projects-section .container {
-  max-width: 1000px; /* Limit content width */
-  margin: 0 auto; /* Center the container */
+/* Background Blobs */
+.proj-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
 }
 
-/* Section Title Styling */
-.projects-section .section-title {
-  text-align: center; /* Center the title */
-  font-size: 2.5rem; /* Large font size */
-  margin-bottom: 3rem; /* Space below the title */
-  color: #ffffff; /* White color for the title */
-  position: relative; /* Needed for the underline effect */
+.proj-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.1;
 }
 
-/* Underline effect for the section title */
-.projects-section .section-title::after {
-  content: ''; /* Required for pseudo-elements */
-  display: block; /* Make it a block element */
-  width: 60px; /* Width of the underline */
-  height: 4px; /* Height of the underline */
-  background-color: #00aaff; /* Bright blue color of the underline */
-  margin: 10px auto 0; /* Center the underline and add space below */
-  border-radius: 2px; /* Optional: Rounded corners for the underline */
+.proj-blob-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #00d2ff, #7c3aed);
+  top: -200px;
+  left: -200px;
 }
 
-/* List of Projects Container (This wraps the individual project items) */
-.projects-list {
-  display: flex; /* Use flexbox to arrange project items vertically */
-  flex-direction: column; /* Stack project items */
-  gap: 4rem; /* Space between project items */
+.proj-blob-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #f43f5e, #3a7bd5);
+  bottom: -150px;
+  right: -150px;
 }
 
-/* Individual Project Item Styling */
-.project-item {
-  display: flex; /* Use flexbox for image and details side-by-side */
-  align-items: center; /* Vertically align items */
-  gap: 3rem; /* Space between image and details */
-  background-color: #2d3748; /* Slightly lighter dark background for each item */
-  padding: 2rem; /* Padding inside each item */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+/* Container */
+.proj-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* Reverse layout for alternating items */
-/* This class is manually added to every second project-item in the JSX */
-.project-item.reverse-layout {
-  flex-direction: row-reverse; /* Reverse the order of image and details */
+/* ===== HEADER ===== */
+.proj-header {
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
-
-/* Project Image Container */
-/* This container holds the single image for a project */
-.project-image-container {
-  flex: 1; /* Allow image container to grow and shrink */
-  max-width: 50%; /* Limit max width of the image container on larger screens */
-  display: flex; /* Use flexbox to center image */
-  justify-content: center; /* Center image horizontally */
-  align-items: center; /* Center image vertically */
+.proj-badge {
+  display: inline-block;
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  color: #00d2ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.35rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
 }
 
-/* Project Image */
-/* This styles the single image within the container */
-.project-image {
-  display: block; /* Remove extra space below image */
-  max-width: 100%; /* Ensure image is responsive within its container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure image covers the area if needed */
-  border-radius: 4px; /* Optional: Rounded corners for the image */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow on image */
+.proj-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0.5rem 0;
+  letter-spacing: -1px;
 }
 
-/* Project Details Container */
-/* This container holds the title, description, and links */
-.project-details {
-  flex: 1; /* Allow details container to grow and shrink */
-  max-width: 50%; /* Limit max width of the details container on larger screens */
+.proj-highlight {
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Project Title */
-.project-details .project-title {
-  font-size: 1.8rem; /* Font size for project title */
-  margin-top: 0; /* Remove default top margin */
-  margin-bottom: 1rem; /* Space below title */
-  color: #00bcd4; /* Cyan color for project title */
+.proj-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  margin: 1rem auto 0;
+  border-radius: 2px;
 }
 
-/* Project Description */
-.project-details .project-description {
-  font-size: 1rem; /* Font size for description */
-  margin-bottom: 1.5rem; /* Space below description */
-  color: #cccccc; /* Lighter gray color */
-  line-height: 1.5; /* Improve readability */
+/* ===== PROJECTS GRID ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  max-width: 700px; /* Focused width that fits screenshots better */
+  margin: 0 auto;
 }
 
-/* Project Links Container */
-.project-links {
-  margin-top: 1rem; /* Space above links */
+/* ===== PROJECT CARD ===== */
+.project-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-/* Individual Project Link Styling */
-.project-links .project-link {
-  display: inline-block; /* Make links inline-block */
-  margin-right: 1.5rem; /* Space between links */
-  color: #00aaff; /* Bright blue link color */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold;
-  transition: color 0.3s ease; /* Smooth color transition */
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(0, 210, 255, 0.3);
+  transform: translateY(-15px);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
 }
 
-.project-links .project-link:hover {
-  color: #00bcd4; /* Cyan color on hover */
+/* Image Section */
+.project-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto; /* Let the image define the height */
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
 }
 
-.project-links .project-link i {
-    margin-left: 0.5rem; /* Space between text and icon */
-    font-size: 1rem; /* Icon size */
+.project-img-wrapper img {
+  width: 100%;
+  height: auto; /* Full image visibility */
+  display: block;
+  transition: transform 0.6s ease;
 }
 
+.project-card:hover .project-img-wrapper img {
+  transform: scale(1.1);
+}
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 30, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.overlay-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.overlay-links a {
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d1b2a;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.overlay-links a:hover {
+  background: #00d2ff;
+  color: #ffffff;
+  transform: translateY(-5px);
+}
+
+/* Content Section */
+.project-content {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-cat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featured-badge {
+  background: #00d2ff;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.project-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.project-card-desc {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Tech Stack */
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.tech-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #00d2ff;
+  background: rgba(0, 210, 255, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 210, 255, 0.1);
+}
+
+/* ===== FEATURED CARD SPECIAL ===== */
+.featured-card {
+  border-color: rgba(0, 210, 255, 0.2);
+  background: rgba(0, 210, 255, 0.02);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .projects-grid {
+    max-width: 800px;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .proj-title {
+    font-size: 2.8rem;
+  }
+  .project-card {
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 600px) {
   .projects-section {
-    padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    padding: 4rem 1rem;
   }
-
-  .projects-section .section-title {
-    font-size: 2rem; /* Decrease title font size */
-    margin-bottom: 2rem; /* Adjust space below title */
+  .proj-title {
+    font-size: 2.2rem;
   }
-
-  .projects-list {
-    gap: 3rem; /* Adjust gap between project items */
-  }
-
-  /* Stack image and details vertically on smaller screens */
-  .project-item,
-  .project-item.reverse-layout { /* Apply to both normal and reversed items */
-    flex-direction: column; /* Stack vertically */
-    gap: 2rem; /* Adjust gap when stacked */
-    padding: 1.5rem; /* Adjust padding inside item */
-  }
-
-  /* Adjust styles for stacked layout */
-  .project-image-container, /* Target the image container */
-  .project-details {
-    max-width: 100%; /* Allow full width when stacked */
-    flex: none; /* Remove flex properties when stacked */
-  }
-
-  .project-details {
-      text-align: center; /* Center text when stacked */
-  }
-
-  /* Adjust image styling when stacked */
-  .project-image {
-      width: 80%; 
-      margin: 0 auto;
-      height: auto; 
-  }
-
-
-  .project-details .project-title {
-    font-size: 1.5rem; /* Decrease project title font size */
-  }
-
-  .project-details .project-description {
-    font-size: 0.95rem; /* Decrease description font size */
-  }
-
-  .project-links {
-      text-align: center; /* Center links when stacked */
-  }
-
-  .project-links .project-link {
-      margin: 0 0.8rem; /* Adjust space between links when stacked */
+  .project-content {
+    padding: 1.5rem;
   }
 }

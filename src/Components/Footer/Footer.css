@@ -1,85 +1,167 @@
-/* Footer Container */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+/* Footer Main */
 .footer {
-  /* Updated background color to match the navbar's semi-transparent dark color */
-  background-color: rgba(26, 32, 44, 0.8);
-  color: white; /* White text color */
-  padding: 1.5rem 2rem; /* Adjusted padding for a sticky footer */
-  text-align: center; /* Center text content */
-  /* Added styles for sticky footer */
-  position: fixed; /* Make the footer fixed */
-  bottom: 0; /* Stick to the bottom of the viewport */
-  left: 0; /* Extend to the left edge */
-  right: 0; /* Extend to the right edge */
-  z-index: 999; /* Ensure it stays on top of other content (slightly lower than navbar) */
-  backdrop-filter: blur(10px); /* Apply blur effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  
-
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(5, 10, 25, 1) 100%);
+  color: #cbd5e1;
+  font-family: 'Outfit', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3.5rem 2rem 1.5rem;
 }
 
-/* Container for centering content and controlling width */
-.footer .container {
-  max-width: 800px; /* Reduced the maximum width of the content */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 0 1rem; /* Add some internal padding to the container */
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* Social Links Container */
-.social-links {
-  margin-bottom: 1rem; /* Adjusted space below social links */
+/* Top Section */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
-/* Individual Social Link Styling */
-.social-links a {
-  color: white; /* White color for icons */
-  font-size: 1.5rem; /* Adjusted size of the icons */
-  margin: 0 0.8rem; /* Adjusted space between icons */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
-  display: inline-block; /* Ensure icons are treated as blocks for margin/padding */
+/* Brand */
+.footer-brand .footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #ffffff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 0.5rem 0;
 }
 
-.social-links a:hover {
-  color: #007bff; /* Change color on hover (example blue) */
+.footer-brand .footer-tagline {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
 }
 
-/* Copyright Text Styling */
+/* Quick Links */
+.footer-links h4,
+.footer-social h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+  margin: 0 0 1.2rem 0;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-links ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links ul li a:hover {
+  color: #00d2ff;
+  padding-left: 6px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.social-icons a:hover {
+  background: linear-gradient(135deg, #00d2ff22, #3a7bd522);
+  border-color: #00d2ff;
+  color: #00d2ff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 210, 255, 0.15);
+}
+
+/* Divider */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  margin-bottom: 1.5rem;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .copyright {
-   /* Adjusted smaller font size for copyright */
-  margin: 0; /* Remove default margin */
-  font-family: 'Times New Roman', 'Times', serif;
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
 }
 
-/* Add padding to the bottom of the main content area to prevent content from being hidden by the fixed footer */
-body {
-    padding-bottom: 6rem; /* Add padding to the bottom of the body. Adjust this value based on your footer's height */
-    overflow-x: hidden; /* Keep overflow-x hidden from previous change */
-    /* Optional: Set a default background for the body */
-    background-color: #1a202c; /* Dark navy background for the body */
-    color: #ffffff;
+.copyright span {
+  color: #94a3b8;
+  font-weight: 500;
 }
 
+.footer-credit {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
+}
 
-/* Responsive Styles */
+.heart {
+  color: #f43f5e;
+  display: inline-block;
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .footer {
-    padding: 1rem 1rem; /* Adjust padding for smaller screens */
+    padding: 2.5rem 1.5rem 1.5rem;
   }
 
-   .footer .container {
-      max-width: 100%; /* Allow full width on small screens */
-      padding: 0 0.5rem; /* Adjust internal padding */
-   }
-
-  .social-links a {
-    font-size: 1.3rem; /* Decrease icon size */
-    margin: 0 0.6rem; /* Adjust space between icons */
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
   }
 
-  .copyright {
-    font-size: 0.7rem; /* Decrease copyright font size */
-  }
-
-  body {
-      padding-bottom: 5rem; /* Adjust body padding for smaller screens */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
   }
 }

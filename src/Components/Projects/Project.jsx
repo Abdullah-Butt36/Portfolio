@@ -1,89 +1,113 @@
 import React from "react";
 import "./Project.css";
+import { motion } from "framer-motion";
+import { pageVariants, staggerContainer, fadeUp } from "../../animations";
 
 import fiver from "./fiverrr.jpg";
 import realstate from "./realstate.jpg";
-import spotify from "./spotify.jpg";
+import codefixss from "./codefixss.jpg";
+
 function Project() {
-  const projectOneData = {
-    title: "Fiver Clone",
-    description:
-      " I developed the frontend for a Fiverr clone, focusing on creating a smooth and intuitive user experience for both freelancers and clients. Using technologies like HTML, CSS, JavaScript, and React.js, I built responsive pages for core features such as service listings, user profiles, order management, messaging, and reviews. I integrated dynamic components with backend APIs to enable real-time updates, secure logins, and seamless gig browsing and booking. The design prioritized usability, performance, and mobile responsiveness to closely mirror the functionality and flow of the original Fiverr platform, while maintaining a clean and scalable codebase.",
-  };
-
-  const projectTwoData = {
-    title: "RealEsatate Website",
-    description:
-      "I developed the frontend of a real estate website focused on delivering a clean, responsive, and user-friendly interface for property seekers and agents. Using HTML, CSS, JavaScript, and modern frameworks like React.js, I built dynamic pages for property listings, detailed search filters, interactive maps, user profiles, and contact forms. I integrated the frontend with backend APIs to display real-time property data, support user authentication, and enable features like saving favorites and scheduling viewings. The design emphasized visual clarity, performance, and mobile responsiveness, ensuring a seamless browsing experience across all devices.",
-  };
-
-  const projectThreeData = {
-    title: "Spotify Clone",
-    description:
-      "Developed a Spotify clone with features to upload, browse, and play songs seamlessly. Implemented responsive UI and integrated audio playback functionality for an immersive music experience.Used modern web technologies to simulate real-time music streaming and user interactions.",
-  };
+  const projects = [
+    {
+      title: "CodeFix - Developer Utility Suite",
+      category: "Full-Stack Web App",
+      description: "A high-performance platform for developers featuring a community Q&A forum (Stack Overflow Clone), an AI Coding Assistant, high-speed conversion tools, and essential developer utilities. Designed for seamless workflow optimization.",
+      image: codefixss, 
+      tech: ["React.js", "Supabase", "Tailwind CSS", "Framer Motion"],
+      links: {
+        live: "https://codefix-website-iota.vercel.app/",
+        github: "https://github.com/codefixplatform-tech/codefix_website.git"
+      },
+      featured: true
+    },
+    {
+      title: "Fiverr Ecosystem Clone",
+      category: "Frontend Development",
+      description: "A sophisticated frontend clone of the Fiverr marketplace. Features include dynamic service listings, advanced user profiles, real-time messaging interfaces, and a complete order management system with mobile-responsive design.",
+      image: fiver,
+      tech: ["React.js", "JavaScript", "HTML5", "CSS3"],
+      links: {
+        live: "#",
+        github: "https://github.com/Abdullah-Butt36"
+      }
+    },
+    {
+      title: "Premium Real Estate Hub",
+      category: "Web Application",
+      description: "A modern real estate platform focused on visual clarity and user experience. Implemented dynamic property filtering, interactive map integrations, and real-time data fetching for up-to-date listings.",
+      image: realstate,
+      tech: ["React.js", "Context API", "CSS Modules", "REST API"],
+      links: {
+        live: "#",
+        github: "https://github.com/Abdullah-Butt36"
+      }
+    }
+  ];
 
   return (
     <section className="projects-section">
-      <div className="container">
-        <h2 className="section-title">Projects</h2>
-
-        <div className="projects-list">
-          <div className="project-item">
-            <div className="project-image-container">
-              <img
-                src={fiver}
-                alt={`${projectOneData.title} Screenshot`}
-                className="project-image"
-              />
-            </div>
-
-            <div className="project-details">
-              <h3 className="project-title">{projectOneData.title}</h3>
-              <p className="project-description">
-                {projectOneData.description}
-              </p>
-              <div className="project-links"></div>
-            </div>
-          </div>
-
-          <div className="project-item reverse-layout">
-            <div className="project-image-container">
-              <img
-                src={realstate}
-                alt={`${projectTwoData.title} Screenshot`}
-                className="project-image"
-              />
-            </div>
-
-            <div className="project-details">
-              <h3 className="project-title">{projectTwoData.title}</h3>
-              <p className="project-description">
-                {projectTwoData.description}
-              </p>
-              <div className="project-links"></div>
-            </div>
-          </div>
-
-          <div className="project-item">
-            <div className="project-image-container">
-              <img
-                src={spotify}
-                alt={`${projectThreeData.title} Screenshot`}
-                className="project-image"
-              />
-            </div>
-
-            <div className="project-details">
-              <h3 className="project-title">{projectThreeData.title}</h3>
-              <p className="project-description">
-                {projectThreeData.description}
-              </p>
-              <div className="project-links"></div>
-            </div>
-          </div>
-        </div>
+      <div className="proj-bg">
+        <div className="proj-blob proj-blob-1"></div>
+        <div className="proj-blob proj-blob-2"></div>
       </div>
+
+      <motion.div 
+        variants={pageVariants} 
+        initial="initial" 
+        animate="animate"
+        className="proj-container"
+      >
+        <div className="proj-header">
+          <span className="proj-badge">Selected Works</span>
+          <h2 className="proj-title">Featured <span className="proj-highlight">Projects</span></h2>
+          <div className="proj-divider"></div>
+        </div>
+
+        <motion.div 
+          className="projects-grid"
+          variants={staggerContainer}
+          initial="initial"
+          animate="animate"
+        >
+          {projects.map((project, index) => (
+            <motion.div 
+              className={`project-card ${project.featured ? 'featured-card' : ''}`} 
+              key={index}
+              variants={fadeUp}
+            >
+              <div className="project-img-wrapper">
+                <img src={project.image} alt={project.title} />
+                <div className="project-overlay">
+                  <div className="overlay-links">
+                    <a href={project.links.github} target="_blank" rel="noreferrer" title="View Source">
+                      <i className="fab fa-github"></i>
+                    </a>
+                    <a href={project.links.live} target="_blank" rel="noreferrer" title="Live Demo">
+                      <i className="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-content">
+                <div className="project-meta">
+                  <span className="project-cat">{project.category}</span>
+                  {project.featured && <span className="featured-badge">New</span>}
+                </div>
+                <h3 className="project-card-title">{project.title}</h3>
+                <p className="project-card-desc">{project.description}</p>
+                
+                <div className="project-tech-stack">
+                  {project.tech.map((t, i) => (
+                    <span key={i} className="tech-chip">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
