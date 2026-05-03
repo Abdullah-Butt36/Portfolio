@@ -4,6 +4,7 @@ import Picture from "./pic.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { pageVariants } from "../../animations";
+import { Helmet } from "react-helmet-async";
 
 function Hero() {
   const titleRef = useRef(null);
@@ -21,6 +22,10 @@ function Hero() {
 
   return (
     <section className="hero-section">
+      <Helmet>
+        <title>Abdullah Butt | Full-Stack Developer</title>
+        <meta name="description" content="Welcome to the portfolio of Abdullah Butt, a Full-Stack Developer specializing in React and modern web solutions." />
+      </Helmet>
       {/* Animated background blobs */}
       <div className="hero-bg">
         <div className="blob blob-1"></div>

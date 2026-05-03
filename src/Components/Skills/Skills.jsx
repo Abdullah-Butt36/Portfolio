@@ -2,6 +2,7 @@ import React from "react";
 import "./Skills.css";
 import { motion } from "framer-motion";
 import { pageVariants, staggerContainer, fadeUp } from "../../animations";
+import { Helmet } from "react-helmet-async";
 
 function Skills() {
   const skillsData = [
@@ -59,6 +60,10 @@ function Skills() {
 
   return (
     <section className="skills-section">
+      <Helmet>
+        <title>Skills | Abdullah Butt</title>
+        <meta name="description" content="Explore the technical skill set of Abdullah Butt, ranging from React to Supabase and beyond." />
+      </Helmet>
       <div className="skills-bg">
         <div className="skills-blob skills-blob-1"></div>
         <div className="skills-blob skills-blob-2"></div>

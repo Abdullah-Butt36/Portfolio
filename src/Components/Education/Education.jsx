@@ -1,7 +1,8 @@
 import React from 'react';
 import './Education.css';
 import { motion } from 'framer-motion';
-import { pageVariants } from '../../animations';
+import { pageVariants, staggerContainer, fadeUp } from '../../animations';
+import { Helmet } from 'react-helmet-async';
 
 function Education() {
 
@@ -43,6 +44,10 @@ function Education() {
 
   return (
     <section className="education-section">
+      <Helmet>
+        <title>Education | Abdullah Butt</title>
+        <meta name="description" content="View the educational background and certifications of Abdullah Butt." />
+      </Helmet>
       <div className="edu-bg">
         <div className="edu-blob edu-blob-1"></div>
         <div className="edu-blob edu-blob-2"></div>

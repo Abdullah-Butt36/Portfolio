@@ -2,8 +2,9 @@ import React from "react";
 import "./Project.css";
 import { motion } from "framer-motion";
 import { pageVariants, staggerContainer, fadeUp } from "../../animations";
+import { Helmet } from "react-helmet-async";
 
-import fiver from "./fiverrr.jpg";
+import faran from "./faran.jpg";
 import realstate from "./realstate.jpg";
 import codefixss from "./codefixss.jpg";
 
@@ -22,14 +23,14 @@ function Project() {
       featured: true
     },
     {
-      title: "Fiverr Ecosystem Clone",
-      category: "Frontend Development",
-      description: "A sophisticated frontend clone of the Fiverr marketplace. Features include dynamic service listings, advanced user profiles, real-time messaging interfaces, and a complete order management system with mobile-responsive design.",
-      image: fiver,
-      tech: ["React.js", "JavaScript", "HTML5", "CSS3"],
+      title: "Faran Traders - ERP Solution",
+      category: "Full-Stack Web App",
+      description: "A professional business management system migrated from PHP to React and Supabase. It features real-time tracking of customers, suppliers, and ledger items with dynamic data visualization via interactive charts and custom print logic for business reports.",
+      image: faran,
+      tech: ["React.js", "Supabase", "Framer Motion", "Charts", "Print Logic"],
       links: {
-        live: "#",
-        github: "https://github.com/Abdullah-Butt36"
+        live: "https://faran-traders-management.vercel.app/",
+        github: "https://github.com/Abdullah-Butt36/Faran-Traders-Management.git"
       }
     },
     {
@@ -47,6 +48,10 @@ function Project() {
 
   return (
     <section className="projects-section">
+      <Helmet>
+        <title>Projects | Abdullah Butt</title>
+        <meta name="description" content="Explore the latest projects by Abdullah Butt, including ERP systems, AI developer tools, and more." />
+      </Helmet>
       <div className="proj-bg">
         <div className="proj-blob proj-blob-1"></div>
         <div className="proj-blob proj-blob-2"></div>

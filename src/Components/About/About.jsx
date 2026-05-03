@@ -2,6 +2,7 @@ import React from 'react';
 import './about.css';
 import { motion } from 'framer-motion';
 import { pageVariants } from '../../animations';
+import { Helmet } from 'react-helmet-async';
 
 function About() {
   const skills = [
@@ -16,6 +17,10 @@ function About() {
 
   return (
     <section className="about-section">
+      <Helmet>
+        <title>About Me | Abdullah Butt</title>
+        <meta name="description" content="Learn more about Abdullah Butt's journey as a Full-Stack Developer and his experience in the MERN stack." />
+      </Helmet>
       <div className="about-bg">
         <div className="about-blob about-blob-1"></div>
         <div className="about-blob about-blob-2"></div>

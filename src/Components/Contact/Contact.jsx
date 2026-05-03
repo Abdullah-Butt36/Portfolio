@@ -3,6 +3,7 @@ import './Contact.css';
 import { motion } from 'framer-motion';
 import { pageVariants, staggerContainer, fadeUp } from '../../animations';
 import emailjs from '@emailjs/browser';
+import { Helmet } from 'react-helmet-async';
 
 function Contact() {
   const form = useRef();
@@ -66,6 +67,10 @@ function Contact() {
 
   return (
     <section className="contact-section">
+      <Helmet>
+        <title>Contact Me | Abdullah Butt</title>
+        <meta name="description" content="Get in touch with Abdullah Butt for project collaborations or teaching opportunities." />
+      </Helmet>
       <div className="contact-bg">
         <div className="contact-blob contact-blob-1"></div>
         <div className="contact-blob contact-blob-2"></div>
