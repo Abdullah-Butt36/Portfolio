@@ -10,11 +10,14 @@ A high-fidelity, professional **Frontend Portfolio** designed for modern develop
 - **📱 Fully Responsive:** Optimized for all screen sizes, from large desktops to mobile devices.
 - **📂 Project Showcase:** Clean grid layout for showcasing work with tech stack chips and live links.
 - **⚡ Fast Performance:** Built using Vite for lightning-fast development and optimized production builds.
+- **🔍 SEO Optimized:** Fully optimized for search engines with dynamic meta tags, robots.txt, and sitemap.xml.
 
 ## 🛠️ Tech Stack
 
 - **Frontend:** React.js, JavaScript (ES6+)
+- **Backend/DB:** Supabase (for Faran Traders ERP)
 - **Animations:** Framer Motion
+- **SEO:** React Helmet Async
 - **Styling:** Vanilla CSS (Modern CSS3 with Flexbox/Grid)
 - **Email Service:** EmailJS
 - **Deployment:** Netlify / Vercel
@@ -48,6 +51,14 @@ A high-fidelity, professional **Frontend Portfolio** designed for modern develop
    ```bash
    npm run build
    ```
+
+## 🔍 SEO & Visibility
+
+This portfolio is built with SEO best practices in mind:
+- **Dynamic Meta Tags:** Each page has unique titles and descriptions managed by `react-helmet-async`.
+- **Social Sharing:** Optimized Open Graph (OG) and Twitter card tags for professional link previews.
+- **Search Engine Friendly:** Includes `robots.txt` and a dynamically generated `sitemap.xml`.
+- **Semantic HTML:** Structured using proper HTML5 elements for better indexing.
 
 ## 📄 License
 
